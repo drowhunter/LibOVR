@@ -1,14 +1,14 @@
 /********************************************************************************/ /**
  \file  OVR_ErrorCode.h
  \brief     This header provides LibOVR error code declarations.
- \copyright Copyright 2015-2016 Oculus VR, LLC All Rights reserved.
+ \copyright Copyright (c) Facebook Technologies, LLC and its affiliates. All rights reserved.
  *************************************************************************************/
 
 #ifndef OVR_ErrorCode_h
 #define OVR_ErrorCode_h
 
-#include "OVR_Version.h"
 #include <stdint.h>
+#include "OVR_Version.h"
 
 
 
@@ -66,7 +66,6 @@ typedef enum ovrSuccessTypes_ {
 
   /// Device is not available for the requested operation.
   ovrSuccess_DeviceUnavailable = 1002,
-
 } ovrSuccessTypes;
 
 // Public error types
@@ -128,15 +127,45 @@ typedef enum ovrErrorType_ {
   /// Tracking is lost when ovr_GetDevicePoses() is called.
   ovrError_LostTracking = -1018,
 
+  /// There was a problem initializing the external camera for capture
+  ovrError_ExternalCameraInitializedFailed = -1019,
+
+  /// There was a problem capturing external camera frames
+  ovrError_ExternalCameraCaptureFailed = -1020,
+
+  /// The external camera friendly name list and the external camera name list
+  /// are not the fixed size(OVR_MAX_EXTERNAL_CAMERA_NAME_BUFFER_SIZE).
+  ovrError_ExternalCameraNameListsBufferSize = -1021,
+
+  /// The external camera friendly name list is not the same size as
+  /// the external camera name list.
+  ovrError_ExternalCameraNameListsMistmatch = -1022,
+
+  /// The external camera property has not been sent to OVRServer
+  /// when the user tries to open the camera.
+  ovrError_ExternalCameraNotCalibrated = -1023,
+
+  /// The external camera name is larger than OVR_EXTERNAL_CAMERA_NAME_SIZE-1
+  ovrError_ExternalCameraNameWrongSize = -1024,
+
+  /// The caller doesn't have permissions for the requested action.
+  ovrError_AccessDenied = -1025,
+
   /*************************************************/
   /* Audio error range, reserved for Audio errors. */
   /*************************************************/
 
-  /// Failure to find the specified audio device.
+  /// Failure to find neither audio input or output device.
   ovrError_AudioDeviceNotFound = -2001,
 
   /// Generic COM error.
   ovrError_AudioComError = -2002,
+
+  /// Failure to find the specified audio input device.
+  ovrError_AudioInputDeviceNotFound = -2003,
+
+  /// Failure to find the specified audio output device.
+  ovrError_AudioOutputDeviceNotFound = -2004,
 
   /**************************/
   /* Initialization errors. */
@@ -220,6 +249,9 @@ typedef enum ovrErrorType_ {
   /// Vulkan initialization error.
   ovrError_InitializeVulkan = -3025,
 
+  /// The graphics driver is black-listed.
+  ovrError_BlacklistedGfxDriver = -3026,
+
   /********************/
   /* Rendering errors */
   /********************/
@@ -252,6 +284,9 @@ typedef enum ovrErrorType_ {
 
   /// Display portion of HMD is plugged into an incompatible port (ex: IGP)
   ovrError_DisplayPluggedIncorrectly = -6008,
+
+  /// Returned in the event a virtual display system reaches a display limit
+  ovrError_DisplayLimitReached = -6009,
 
   /****************/
   /* Fatal errors */

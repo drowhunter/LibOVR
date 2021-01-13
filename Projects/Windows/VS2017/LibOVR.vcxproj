@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="DebugSingleProcess|Win32">
       <Configuration>DebugSingleProcess</Configuration>
@@ -35,6 +35,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Include\Extras\OVR_Math.h" />
     <ClInclude Include="..\..\..\Include\OVR_Version.h" />
     <ClInclude Include="..\..\..\Include\OVR_ErrorCode.h" />
     <ClInclude Include="..\..\..\Include\OVR_CAPI.h" />
@@ -56,60 +57,59 @@
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>LibOVR</RootNamespace>
     <ProjectName>LibOVR</ProjectName>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugSingleProcess|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugSingleProcess|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleProcess|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleProcess|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -148,28 +148,28 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(ProjectDir)../../../Lib/Windows/$(Platform)/$(Configuration)/VS2015/</OutDir>
+    <OutDir>$(ProjectDir)../../../Lib/Windows/$(Platform)/$(Configuration)/$(VSDIR)/</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugSingleProcess|Win32'">
-    <OutDir>$(ProjectDir)../../../Lib/Windows/$(Platform)/$(Configuration)/VS2015/</OutDir>
+    <OutDir>$(ProjectDir)../../../Lib/Windows/$(Platform)/$(Configuration)/$(VSDIR)/</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(ProjectDir)../../../Lib/Windows/$(Platform)/$(Configuration)/VS2015/</OutDir>
+    <OutDir>$(ProjectDir)../../../Lib/Windows/$(Platform)/$(Configuration)/$(VSDIR)/</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugSingleProcess|x64'">
-    <OutDir>$(ProjectDir)../../../Lib/Windows/$(Platform)/$(Configuration)/VS2015/</OutDir>
+    <OutDir>$(ProjectDir)../../../Lib/Windows/$(Platform)/$(Configuration)/$(VSDIR)/</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IntDir>$(ProjectDir)../../../Obj/$(ProjectName)/Windows/$(Platform)/$(Configuration)/VS2015/</IntDir>
+    <IntDir>$(ProjectDir)../../../Obj/$(ProjectName)/Windows/$(Platform)/$(Configuration)/$(VSDIR)/</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugSingleProcess|Win32'">
-    <IntDir>$(ProjectDir)../../../Obj/$(ProjectName)/Windows/$(Platform)/$(Configuration)/VS2015/</IntDir>
+    <IntDir>$(ProjectDir)../../../Obj/$(ProjectName)/Windows/$(Platform)/$(Configuration)/$(VSDIR)/</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IntDir>$(ProjectDir)../../../Obj/$(ProjectName)/Windows/$(Platform)/$(Configuration)/VS2015/</IntDir>
+    <IntDir>$(ProjectDir)../../../Obj/$(ProjectName)/Windows/$(Platform)/$(Configuration)/$(VSDIR)/</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugSingleProcess|x64'">
-    <IntDir>$(ProjectDir)../../../Obj/$(ProjectName)/Windows/$(Platform)/$(Configuration)/VS2015/</IntDir>
+    <IntDir>$(ProjectDir)../../../Obj/$(ProjectName)/Windows/$(Platform)/$(Configuration)/$(VSDIR)/</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <TargetName>LibOVR</TargetName>
@@ -184,28 +184,28 @@
     <TargetName>LibOVR</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(ProjectDir)../../../Lib/Windows/$(Platform)/$(Configuration)/VS2015/</OutDir>
+    <OutDir>$(ProjectDir)../../../Lib/Windows/$(Platform)/$(Configuration)/$(VSDIR)/</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleProcess|Win32'">
-    <OutDir>$(ProjectDir)../../../Lib/Windows/$(Platform)/$(Configuration)/VS2015/</OutDir>
+    <OutDir>$(ProjectDir)../../../Lib/Windows/$(Platform)/$(Configuration)/$(VSDIR)/</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(ProjectDir)../../../Lib/Windows/$(Platform)/$(Configuration)/VS2015/</OutDir>
+    <OutDir>$(ProjectDir)../../../Lib/Windows/$(Platform)/$(Configuration)/$(VSDIR)/</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleProcess|x64'">
-    <OutDir>$(ProjectDir)../../../Lib/Windows/$(Platform)/$(Configuration)/VS2015/</OutDir>
+    <OutDir>$(ProjectDir)../../../Lib/Windows/$(Platform)/$(Configuration)/$(VSDIR)/</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IntDir>$(ProjectDir)../../../Obj/$(ProjectName)/Windows/$(Platform)/$(Configuration)/VS2015/</IntDir>
+    <IntDir>$(ProjectDir)../../../Obj/$(ProjectName)/Windows/$(Platform)/$(Configuration)/$(VSDIR)/</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleProcess|Win32'">
-    <IntDir>$(ProjectDir)../../../Obj/$(ProjectName)/Windows/$(Platform)/$(Configuration)/VS2015/</IntDir>
+    <IntDir>$(ProjectDir)../../../Obj/$(ProjectName)/Windows/$(Platform)/$(Configuration)/$(VSDIR)/</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IntDir>$(ProjectDir)../../../Obj/$(ProjectName)/Windows/$(Platform)/$(Configuration)/VS2015/</IntDir>
+    <IntDir>$(ProjectDir)../../../Obj/$(ProjectName)/Windows/$(Platform)/$(Configuration)/$(VSDIR)/</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleProcess|x64'">
-    <IntDir>$(ProjectDir)../../../Obj/$(ProjectName)/Windows/$(Platform)/$(Configuration)/VS2015/</IntDir>
+    <IntDir>$(ProjectDir)../../../Obj/$(ProjectName)/Windows/$(Platform)/$(Configuration)/$(VSDIR)/</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <TargetName>LibOVR</TargetName>
@@ -215,6 +215,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>LibOVR</TargetName>
+    <LibraryPath>$(OVRSDKROOT)3rdParty\DirectXTex\lib\BuildRelease;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleProcess|x64'">
     <TargetName>LibOVR</TargetName>
@@ -418,7 +419,13 @@
     <Lib>
       <AdditionalDependencies>
       </AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
     </Lib>
+    <ProjectReference>
+      <LinkLibraryDependencies>
+      </LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSingleProcess|x64'">
     <ClCompile>
